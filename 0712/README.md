@@ -28,9 +28,9 @@ DB_HOST可以通过`ip a`看到，端口按照之前设定的3306来
 
 确认 Httpd-conf  Allowover All
 
-![img1]()
+![img1](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/0712_1.png)
 
-![img2]()
+![img2](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/0712_2.png)
 
 下载poc
 
@@ -38,7 +38,7 @@ https://gist.github.com/leonjza/2244eb15510a0687ed93160c623762ab
 
 打到未授权获取发布过文章的其他用户的用户名、id
 
-![img3]()
+![img3](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/0712_3.png)
 
 #### 原理（来自：https://iassas.com/archives/5a5cf5bb.html）
 
@@ -52,7 +52,7 @@ https://gist.github.com/leonjza/2244eb15510a0687ed93160c623762ab
 
 在99行使用了`update_item`和`update_item_permissions_check`。
 
-![img4]()
+![img4](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/0712_4.png)
 
 查看593行的`update_item_permissions_check`函数，其将ID值传递给`get_post()`函数。
 
@@ -60,7 +60,7 @@ https://gist.github.com/leonjza/2244eb15510a0687ed93160c623762ab
 
 如果发送的ID没有对应的post，就可以绕过权限检查，并允许继续执行`update_item`方法。
 
-![img5]()
+![img5](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/0712_5.png)
 
 由于使用`get_instance()`静态方法来获取post，造成`get_post()`在特定情况下无法找到对应的ID。
 
@@ -68,11 +68,11 @@ https://gist.github.com/leonjza/2244eb15510a0687ed93160c623762ab
 
 有一个细节，其会将ID参数在传递给get_post之前会将其转换成整数。
 
-![img6]()
+![img6](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/0712_6.png)
 
 PHP语言中做类型的比较和转换时，其会返回整数。例如
 
-![img7]()
+![img7](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/0712_7.png)
 
 例如提交一个请求为/wp-json/wp/v2/posts/123?id=456ABC，PHP会将其ID返回456。由于456ABC并不是纯数字会导致/wordpress/wp-includes/class-wp-post.php获取post_id失败。
 
