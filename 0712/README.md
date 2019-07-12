@@ -4,6 +4,14 @@
 
 ## 2019/07/12
 
+### tree
+
+`npm install mddir -g`
+
+`PS D:\back up\cqr> mddir`
+
+需要node.js环境支持
+
 ### CVE-2017-5487
 
 先用docker把wordpress4.7.1和mysql准备好
