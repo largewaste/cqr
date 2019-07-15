@@ -7,9 +7,9 @@
 
 mc服务端默认端口为25565，所以在腾讯云上添加新的安全组
 
-![img1]()
+![img1](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/0713_1.png)
 
-![img2]()
+![img2](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/0713_2.png)
 
 `systemctl enable docker.service`
 
@@ -83,7 +83,7 @@ ADD_SIZE | 4 |可选字段 - 添加块大小
 
 举个例子：
 
-![rar_0]()
+![rar_0](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/rar_0.png)
 
 其实这些都还算是比较浅显的部分，更多的可以参考《RAR文件格式的研究》
 
@@ -93,19 +93,19 @@ rar就目前来说还是比较玄学的一种压缩格式，导致目前的挖�
 
 对比一下几种不同的情况的rar
 
-![rar_importance_1]()
+![rar_importance_1](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/rar_importance_1.png)
 
 > 未加密的rar
 
-![rar_importance_2]()
+![rar_importance_2](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/rar_importance_2.png)
 
 > rar标准加密过的rar
 
 但是如果把文件名也给加密的话，那么文件头的内容则会产生变化
 
-![rar_importance_2_1]()
+![rar_importance_2_1](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/rar_importance_2_1.png)
 
-![rar_importance_3]()
+![rar_importance_3](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/rar_importance_3.png)
 
 > rar5标准加密过后的文件
 
@@ -113,8 +113,8 @@ rar就目前来说还是比较玄学的一种压缩格式，导致目前的挖�
 
 加密文件名的效果如下：
 
-![rar_importance_4]()
-![rar_importance_5]()
+![rar_importance_4](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/rar_importance_4.png)
+![rar_importance_5](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/rar_importance_5.png)
 > 使用rar标准加密文件名的效果
 
 注意打红圈的地方
@@ -129,7 +129,7 @@ rar就目前来说还是比较玄学的一种压缩格式，导致目前的挖�
 
 在这个题目中，我们可以发现这个压缩包里面其实放入了两个文件，但是用压缩软件打开的话却只能读取其中的一个文件，实际上就是压缩包的这一个部位被修改以后出现了问题
 
-![rar_importance_6]()
+![rar_importance_6](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/rar_importance_6.png)
 
 将打红圈的地方修正为`3C 74`即可正常打开压缩包
 
@@ -140,7 +140,7 @@ rar就目前来说还是比较玄学的一种压缩格式，导致目前的挖�
 同时如果修改这个**分隔符**的话，那么压缩包也会出现像上面那道题的情况，可以自己去确认一下
 
 
-![rar_importance_7]()
+![rar_importance_7](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/rar_importance_7.png)
 
 > 图里是我将4张图片打包以后检索出来的结果，所以可以认定上边的论证是成立的
 
