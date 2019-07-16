@@ -57,7 +57,7 @@ echo "<h2 align=center>没有找到和".htmlspecialchars($str)."相关的结果.
 
 `"> <a href="javascript:%61lert(1)">click</a> //`
 
-![img1]()
+![img1](https://raw.githubusercontent.com/largewaste/cqr/master/imgs(copied%20from%20other%20places)/0716_1.png)
 
 
 
